@@ -1,5 +1,8 @@
-import React from 'react';
-import './style.css';
+import React from 'react'
+import './style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+
 
 import AddProducts from '../AddProducts'
 import BuyProducts from '../BuyProducts'
@@ -9,7 +12,7 @@ function Layout() {
   return (
     <div>
       <header className="App-header">
-        <h2>I'm the Layout / Main Page</h2>
+        <h1>Cart <FontAwesomeIcon icon={faShoppingCart}/></h1>
       </header>
       <AddProducts />
       <BuyProducts />
