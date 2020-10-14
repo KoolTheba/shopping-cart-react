@@ -15,10 +15,11 @@ export default class Layout extends React.Component {
   state = {
     loading: true,
     products: {},
-    cartList: {
-      'PLANT14TGG': 1,
-      'PLANT23HJJ': 1
-    }
+    cartList: {},
+    discountCode: '10FORPLANTS',
+    isValidCode: false,
+    value: '',
+    showError: false
   }
 
   componentDidMount(){
@@ -70,8 +71,39 @@ export default class Layout extends React.Component {
     });
   }
 
+  handleInputChange = (e) => {
+    this.setState({ 
+      value: e.target.value,
+      showError: false
+    })
+  }
+
+  handleValidateCode = () => {
+    const trimmedValue = this.state.value.trim().toUpperCase()
+    if(trimmedValue === this.state.discountCode){
+      this.setState({ 
+        isValidCode: true,
+        value: '',
+        showError: false
+      })
+      alert('SUCCESS: VALID DISCOUNT CODE')
+    } else {
+      this.setState({ 
+        value: '',
+        showError: true
+      })
+    }
+  }
+
   render(){
-    const { products, cartList, loading } = this.state
+    const { 
+      products, 
+      cartList, 
+      loading,
+      value,
+      isValidCode,
+      showError
+    } = this.state
 
     if(loading){
       return(
@@ -98,7 +130,15 @@ export default class Layout extends React.Component {
             removeListItem={this.handleRemoveListItem}
             cleanShoppingList={this.handleCleanShoppingList}
           />
-          <Totals />
+          <Totals 
+            cartList={cartList}
+            products={products}
+            handleInputChange={this.handleInputChange}
+            handleValidateCode={this.handleValidateCode}
+            value={value}
+            isValidCode={isValidCode}
+            showError={showError}
+          />
         </>
         }
       </div>
