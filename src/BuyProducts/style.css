@@ -1,0 +1,10 @@
+.products-to-buy {
+    width: 100%;
+    border: 1px solid white;
+}
+
+.table-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

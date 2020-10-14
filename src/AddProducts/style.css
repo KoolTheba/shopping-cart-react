@@ -1,0 +1,25 @@
+.products-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+.product-image img {
+    width: 150px;
+    height: 150px;
+}
+
+.product-info {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+}
