@@ -1,10 +1,16 @@
 import React from 'react'
 import './style.css'
 
-function CleanCart () {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBroom } from '@fortawesome/free-solid-svg-icons'
+
+
+function CleanCart (props) {
     return(
         <>
-        <button>Clean Cart</button>
+        <button
+            onClick={props.cleanShoppingList}
+        >Clean Cart <FontAwesomeIcon icon={faBroom}/></button>
         </>
     )
 }
