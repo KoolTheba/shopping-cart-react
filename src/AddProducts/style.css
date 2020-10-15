@@ -16,10 +16,21 @@
 }
 
 p {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-button {
+.add-to-cart-button {
     cursor: pointer;
     font-weight: bold;
+    width: 145px;
+    height: 2.4rem;
+    font-size: 1rem;
+}
+
+.add-to-cart-button:hover {
+    background-color: #799F0C;
+}
+
+.cart-icon {
+    margin-left: 0.5rem;
 }

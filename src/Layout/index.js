@@ -8,7 +8,6 @@ import BuyProducts from '../BuyProducts'
 import Totals from '../Totals'
 
 import data from '../data/products.json'
-console.log(data)
 
 export default class Layout extends React.Component {
 
@@ -86,7 +85,6 @@ export default class Layout extends React.Component {
         value: '',
         showError: false
       })
-      alert('SUCCESS: VALID DISCOUNT CODE')
     } else {
       this.setState({ 
         value: '',

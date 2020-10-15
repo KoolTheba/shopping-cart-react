@@ -1,0 +1,16 @@
+.clean-cart-button {
+    width: auto;
+    height: 40px;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.x-icon {
+    margin-left: 0.5rem;
+}
+
+.clean-cart-button:hover {
+    background-color: #dd3e54;
+}

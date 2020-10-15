@@ -2,3 +2,24 @@
     text-align: end;
     margin-top: 50px;
 }
+
+.code-label {
+    font-size: 1.5rem;
+}
+
+.code-input {
+    width: 160px;
+    height: 2rem;
+}
+
+.validation-button {
+    width: 145px;
+    height: 2.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.validation-button:hover {
+    background-color: #799F0C;
+}
