@@ -1,11 +1,7 @@
-.table-body {
-    height: 200px;
-}
-
 .product-image-table{
     height: 3rem;
-    border-radius:50%;
-    -moz-border-radius:50%;
-    -webkit-border-radius:50%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     width: 3rem;
 }
