@@ -1,7 +1,24 @@
 import React from 'react'
 import './style.css'
+import { makeStyles } from '@material-ui/core/styles'
+import Alert from '@material-ui/lab/Alert'
 
-function Totals (props){
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
+
+const useStyles = makeStyles(() => ({
+    infoMessages: {
+      width: '45%',
+      marginLeft: '52%',
+      marginBottom: '10px',
+      fontWeight: "bold",
+      backgroundColor: 'white',
+    },
+}));
+
+function Totals (props) {
+    const classes = useStyles();
+
     const productsList = Object.keys(props.cartList).map(id => {
         const {image, name, price} = props.products[id];
         return {
@@ -19,23 +36,38 @@ function Totals (props){
         <section className='totals-section'>
             <h5>Total: <span>{total} €</span></h5>
             {props.showError &&
-                <p style={{ 
-                    color: 'red',
-                    fontStyle: 'italic',
-                    fontSize: '1rem'
-                }}>NON VALID DISCOUNT CODE. TRY AGAIN!</p>
+                <Alert 
+                    variant="outlined" 
+                    severity="error"
+                    className={classes.infoMessages}
+                >
+                Non-valid code - try again!
+                </Alert>
             }
-            <h5>Discount Code: <input 
-                    placeholder='enter discount code...'
-                    onChange={props.handleInputChange}
-                    value={props.value}
-                    type='text'
-                />
-                <button
-                    type='submit'
-                    onClick={props.handleValidateCode}
-                >Validate Code</button>
-            </h5>
+            {props.isValidCode &&
+                <Alert 
+                    variant="outlined"
+                    severity="success"
+                    className={classes.infoMessages}
+                >
+                Valid code - Discount applied!
+                </Alert>
+            }
+            <label className='code-label'>Discount code: </label>
+            <input
+                className='code-input'
+                placeholder='enter discount code...'
+                onChange={props.handleInputChange}
+                value={props.value}
+                type='text'
+                disabled={props.isValidCode ? true : false}
+            />
+            <button
+                className='validation-button'
+                type='submit'
+                onClick={props.handleValidateCode}
+            >Validate Code <FontAwesomeIcon icon={faCheckSquare}/>
+            </button>           
             <h5>Total Cart: <span>{props.isValidCode ? discountTotal : total} €</span></h5>
         </section>
         </>
