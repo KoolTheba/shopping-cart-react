@@ -8,6 +8,7 @@ import BuyProducts from '../BuyProducts'
 import Totals from '../Totals'
 
 import data from '../data/products.json'
+import store from '../localstorage'
 
 export default class Layout extends React.Component {
 
@@ -22,52 +23,56 @@ export default class Layout extends React.Component {
   }
 
   componentDidMount(){
-    this.setState({ products: data, loading: false })
+    this.setState({ 
+      products: data,
+      loading: false,
+      cartList: store.getAllProducts()
+    })
   }
 
   handleAddProduct = (id) => {
-      if(this.state.cartList.hasOwnProperty(id)){
-        this.setState((state) => ({cartList: {
-          ...state.cartList,
-          [id]: state.cartList[id] + 1
-          }
-        }))
-      } else {
-        this.setState((state) => ({cartList: {
-          ...state.cartList,
-          [id]: 1
-        }}))
-      }
+    const storedProductQuantity = parseInt(store.getProduct(id))
+    if(storedProductQuantity) {
+      store.updateProduct(id, storedProductQuantity+1)
+    } else {
+      store.saveProduct(id)
+    }
+
+    this.setState({
+      cartList: store.getAllProducts()
+    })
   }
 
   handleAddQuantity = (id) => {
-    this.setState((state) => ({cartList: {
-      ...state.cartList,
-      [id]: state.cartList[id] + 1
-      }
-    }))
+    const storedProductQuantity = parseInt(store.getProduct(id))
+    store.updateProduct(id, storedProductQuantity+1)
+
+    this.setState({
+      cartList: store.getAllProducts()
+    })
   }
 
   handleRemoveQuantity = (id) => {
-    this.setState((state) => ({cartList: {
-      ...state.cartList,
-      [id]: state.cartList[id] - 1
-      }
-    }))
+    const storedProductQuantity = parseInt(store.getProduct(id))
+      store.updateProduct(id, storedProductQuantity-1)
+
+    this.setState({
+      cartList: store.getAllProducts()
+    })
   }
 
   handleRemoveListItem = (id) => {
-    const { cartList } = this.state;
-    const { [id]: _, ...newCartList } = cartList;
+    store.removeProduct(id)
     this.setState({
-      cartList: newCartList
-    });
+      cartList: store.getAllProducts()
+    })
   }
 
   handleCleanShoppingList = () => {
+    store.removeAllProducts()
     this.setState({
-      cartList: {}
-    });
+      cartList: store.getAllProducts()
+    })
   }
 
   handleInputChange = (e) => {
