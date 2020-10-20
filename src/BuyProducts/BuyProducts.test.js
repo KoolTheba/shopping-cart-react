@@ -28,7 +28,17 @@ describe('BuyProducts component', () => {
         expect(wrapper).toMatchSnapshot()
     });
 
-    it('renders BuyProductsItem component correctly when there is at least 1 product and has props...', () => {
+    it('renders no-products-info paragraph correctly when there are no products in the list', () => {
+        const currentProps = {
+            products: {},
+            cartList: {}
+        }
+        const wrapper = shallow(<BuyProducts {...currentProps}/>)
+        expect(wrapper.find('.no-products-info')).toHaveLength(1)
+        expect(wrapper.find('.no-products-info').text()).toEqual('There are no products in your bag')
+    });
+
+    it('renders BuyProductsItem component correctly when there is at least 1 product and has props', () => {
         const productDetail = {
             id: 'PLANT14TGG',
             quantity: props.cartList['PLANT14TGG'],
@@ -42,7 +52,6 @@ describe('BuyProducts component', () => {
         expect(wrapper.find('BuyProductItem').props().addUnit).toEqual(props.addUnit)
         expect(wrapper.find('BuyProductItem').props().removeUnit).toEqual(props.removeUnit)
         expect(wrapper.find('BuyProductItem').props().removeListItem).toEqual(props.removeListItem)
-
     });
 
     it('renders CleanCart component correctly and has props...', () => {
