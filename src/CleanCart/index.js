@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -20,5 +21,10 @@ function CleanCart (props) {
         </>
     )
 }
+
+CleanCart.propTypes = {
+    cleanShoppingList: PropTypes.func
+}
+
 
 export default CleanCart

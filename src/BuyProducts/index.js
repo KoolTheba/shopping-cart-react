@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -87,6 +88,15 @@ function BuyProducts (props) {
         </section>
         </>
     )
+}
+
+BuyProducts.propTypes = {
+    cartList: PropTypes.object,
+    products: PropTypes.object,
+    addUnit: PropTypes.func,
+    removeUnit: PropTypes.func,
+    removeListItem: PropTypes.func,
+    cleanShoppingList: PropTypes.func,
 }
 
 export default BuyProducts

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './style.css'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -66,6 +67,13 @@ function BuyProductItem (props) {
               </TableCell>
         </TableRow>
     )
+}
+
+BuyProductItem.propTypes = {
+    product: PropTypes.object,
+    addUnit: PropTypes.func,
+    removeUnit: PropTypes.func,
+    removeListItem: PropTypes.func
 }
 
 export default BuyProductItem

@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './style.css'
+
 import { makeStyles } from '@material-ui/core/styles'
 import Alert from '@material-ui/lab/Alert'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
 
@@ -74,6 +75,16 @@ function Totals (props) {
         </section>
         </>
     )
+}
+
+Totals.propTypes = {
+    cartList: PropTypes.object,
+    products: PropTypes.object,
+    handleInputChange: PropTypes.func,
+    handleValidateCode: PropTypes.func,
+    value: PropTypes.string,
+    isValidCode: PropTypes.bool,
+    showError: PropTypes.bool
 }
 
 export default Totals
