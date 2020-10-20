@@ -72,6 +72,7 @@ function BuyProducts (props) {
                         {productsList.length > 0 &&
                             productsList.map(product => (
                                 <BuyProductItem
+                                    key={product.id}
                                     product={product}
                                     addUnit={props.addUnit}
                                     removeUnit={props.removeUnit}
