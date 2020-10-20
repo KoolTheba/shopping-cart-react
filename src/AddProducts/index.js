@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -38,6 +39,11 @@ function AddProducts (props) {
         </section>
         </>
     )
+}
+
+AddProducts.propTypes = {
+    addProducts: PropTypes.func,
+    products: PropTypes.object
 }
 
 export default AddProducts
