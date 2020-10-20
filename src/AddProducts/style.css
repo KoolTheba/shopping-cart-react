@@ -9,6 +9,9 @@
 .product-image img {
     width: 150px;
     height: 150px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 .product-info {

@@ -5,7 +5,6 @@ import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 
-
 function CleanCart (props) {
     return(
         <>

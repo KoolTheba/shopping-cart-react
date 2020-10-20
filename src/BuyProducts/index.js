@@ -56,6 +56,8 @@ function BuyProducts (props) {
         <>
         <section className={classes.buyProducts} id='products-list-section'>
             <h3>Your shopping bag <FontAwesomeIcon icon={faShoppingBasket}/></h3>
+            {productsList.length === 0 && <p className='no-products-info'>There are no products in your bag</p>}
+            {productsList.length > 0 &&
             <TableContainer>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>
@@ -69,9 +71,9 @@ function BuyProducts (props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {productsList.length > 0 &&
-                            productsList.map(product => (
+                        {productsList.map(product => (
                                 <BuyProductItem
+                                    key={product.id}
                                     product={product}
                                     addUnit={props.addUnit}
                                     removeUnit={props.removeUnit}
@@ -82,6 +84,7 @@ function BuyProducts (props) {
                     </TableBody>
                 </Table>
             </TableContainer>
+            }
             <CleanCart 
                 cleanShoppingList={props.cleanShoppingList}
             />
