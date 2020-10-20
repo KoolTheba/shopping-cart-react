@@ -22,7 +22,7 @@ function BuyProductItem (props) {
     const classes = useStyles();
 
     return (
-        <TableRow key={props.product.id}>
+        <TableRow key={props.product.id} className='products-table'>
               <TableCell  align='center' component="th" scope="row">
                 <img
                     className='product-image-table'
@@ -42,22 +42,28 @@ function BuyProductItem (props) {
               </TableCell>
               <TableCell align="center" className={classes.tableBody}>{props.product.price}€</TableCell>
               <TableCell align="center" className={classes.tableBody}>
-                <IconButton 
-                    aria-label="add to shopping cart"
+                <IconButton
+                    className='remove-product-button'
+                    aria-label="remove from shopping cart"
                     onClick={() => props.removeUnit(props.product.id)}
                     disabled={props.product.quantity > 1 ? false : true}    
                 >
-                        <RemoveShoppingCartIcon />
-                    </IconButton>
+                    <RemoveShoppingCartIcon />
+                </IconButton>
                 {props.product.quantity}
                 <IconButton 
+                    className='add-product-button'
                     aria-label="add to shopping cart"
                     onClick={() => props.addUnit(props.product.id)}
                 >
                     <AddShoppingCartIcon />
                 </IconButton>
               </TableCell>
-              <TableCell align="center" className={classes.tableBody}>{props.product.price*props.product.quantity}€</TableCell>
+              <TableCell 
+                    align="center"
+                    className={classes.tableBody}
+                    >{props.product.price*props.product.quantity}€
+              </TableCell>
         </TableRow>
     )
 }

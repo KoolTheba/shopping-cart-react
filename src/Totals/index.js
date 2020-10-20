@@ -39,6 +39,7 @@ function Totals (props) {
                 <Alert 
                     variant="outlined" 
                     severity="error"
+                    id='non-valid-code-error'
                     className={classes.infoMessages}
                 >
                 Non-valid code - try again!
@@ -48,6 +49,7 @@ function Totals (props) {
                 <Alert 
                     variant="outlined"
                     severity="success"
+                    id='success-valid-code-message'
                     className={classes.infoMessages}
                 >
                 Valid code - Discount applied!
@@ -68,7 +70,7 @@ function Totals (props) {
                 onClick={props.handleValidateCode}
             >Validate Code <FontAwesomeIcon icon={faCheckSquare}/>
             </button>           
-            <h5>Total Cart: <span>{props.isValidCode ? discountTotal : total} €</span></h5>
+            <h5>Total Cart: <span className='final-total'>{props.isValidCode ? discountTotal : total} €</span></h5>
         </section>
         </>
     )

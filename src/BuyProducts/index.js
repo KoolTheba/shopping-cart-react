@@ -53,7 +53,7 @@ function BuyProducts (props) {
 
     return(
         <>
-        <section className={classes.buyProducts}>
+        <section className={classes.buyProducts} id='products-list-section'>
             <h3>Your shopping bag <FontAwesomeIcon icon={faShoppingBasket}/></h3>
             <TableContainer>
                 <Table className={classes.table} aria-label="simple table">
@@ -68,9 +68,9 @@ function BuyProducts (props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {productsList.length > 0 && 
+                        {productsList.length > 0 &&
                             productsList.map(product => (
-                                <BuyProductItem 
+                                <BuyProductItem
                                     product={product}
                                     addUnit={props.addUnit}
                                     removeUnit={props.removeUnit}
