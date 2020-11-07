@@ -1,5 +1,5 @@
 # react-shopping-cart
-🛒 Shopping cart made with React and Material-UI 💥
+🛒 Shopping cart made with React, testing and Material-UI 💥
 
 <br>
     <p>
