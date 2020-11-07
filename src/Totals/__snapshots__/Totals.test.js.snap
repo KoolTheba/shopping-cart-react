@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Totals component renders input and button within totals section correctly 1`] = `ReactWrapper {}`;
+
+exports[`Totals component renders totals section correctly 1`] = `ShallowWrapper {}`;

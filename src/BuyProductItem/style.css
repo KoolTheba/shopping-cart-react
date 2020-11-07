@@ -1,0 +1,7 @@
+.product-image-table {
+    height: 3rem;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 3rem;
+}
