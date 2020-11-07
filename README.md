@@ -2,31 +2,46 @@
 🛒 Shopping cart made with React and Material-UI 💥
 
 <br>
-    <p align="center">
+    <p>
         <img src='https://media.giphy.com/media/l2SpQ6mdHaCUHC5J6/giphy.gif' alt="woman-coding"/>
     </p>
 </br>
 
-## Up and Running! 🚀
+> 💃 Extra stuff: see the shopping cart with a data persistance implementation thanks to the home-baked 🧁 localstorage api [todos-goals-api-localstorage](https://www.npmjs.com/package/todos-goals-api-localstorage)
 
-Clone the repo
+```sh
+git checkout feat/add_localstorage
+```
 
-`https://github.com/KoolTheba/shopping-cart-react.git`
+# Up and Running!
 
-Install dependencies
+1.  **Clone this repository.**
 
-`npm i`
+    ```sh
+    git clone https://github.com/KoolTheba/shopping-cart-react.git
+    ```
 
-Go Live! 🚦
+2.  **Start developing.**
 
-`npm run start`
+    Navigate into your new site’s directory, install dependencies and start it up:
 
-## Dependencies
+    ```sh
+    cd react-shopping-cart-app/
+    npm install
+    npm run start
+    ```
+
+3.  **Running!**
+
+    Your site is now running at `http://localhost:3000` 🚀
+
+# Dependencies
 - React
 - Material UI
 - Jest/Enzyme for testing
+- My awesome 👉 [todos-goals-api-localstorage](https://www.npmjs.com/package/todos-goals-api-localstorage)
 
-## Scripts
+# Scripts
 
 In the project directory, you can run:
 
@@ -39,7 +54,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.
 
-## What's next
+# What's next
 For the next or upcoming releases:
 - Add Payment/Button component
 - Stock handling/feature
